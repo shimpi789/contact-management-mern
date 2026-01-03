@@ -60,7 +60,7 @@ function ContactForm({ onSuccess }) {
       // ✅ auto-hide after 5 seconds
       setTimeout(() => {
         setSuccess("");
-      }, 5000);
+      }, 2000);
 
       if (typeof onSuccess === "function") {
         onSuccess();
