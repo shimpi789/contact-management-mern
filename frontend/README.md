@@ -6,7 +6,11 @@ The app allows users to submit contact details through a form, stores them in Mo
 ---
 
 ## 🚀 Live Demo
-👉 <Add your deployed frontend link here>
+👉
+
+Frontend: https://contact-management-frontend-x0dt.onrender.com  
+Backend API: https://contact-management-mern-f75y.onrender.com/api/contacts
+
 
 ---
 
