@@ -9,7 +9,7 @@ function App() {
   const fetchContacts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5004/api/contacts"
+        "https://contact-management-backend.onrender.com/api/contacts"
       );
       setContacts(response.data);
     } catch (error) {
