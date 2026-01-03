@@ -1,52 +1,53 @@
-import React from "react";
-
 function ContactList({ contacts = [] }) {
+  if (!Array.isArray(contacts) || contacts.length === 0) {
+    return (
+      <p className="text-gray-400 text-center">
+        No contacts submitted yet
+      </p>
+    );
+  }
+
   return (
     <div>
-     <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-  Submitted Contacts
-</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-white text-center">
+        Submitted Contacts
+      </h2>
 
-      {contacts.length === 0 ? (
-        <p className="text-gray-500">No contacts yet</p>
-      ) : (
-        <div className="space-y-4">
-          {contacts.map((contact) => (
-            <div
-              key={contact._id}
-              className="flex gap-4 p-4 border rounded-lg hover:shadow-md transition bg-gray-50"
-            >
-              {/* Avatar */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">
-                {contact.name.charAt(0).toUpperCase()}
-              </div>
+      <div className="grid gap-4">
+        {contacts.map((contact) => (
+          <div
+            key={contact._id}
+            className="bg-gray-800 border border-gray-700 rounded-xl p-4"
+          >
+            {/* Name */}
+            <h3 className="text-lg font-bold text-white">
+              {contact.name}
+            </h3>
 
-              {/* Content */}
-              <div className="flex-1">
-                <p className="font-semibold text-lg">
-                  {contact.name}
-                </p>
+            {/* Email */}
+            {contact.email && (
+              <p className="text-gray-300 text-sm mt-1">
+                <span className="font-medium text-gray-400">Email:</span>{" "}
+                {contact.email}
+              </p>
+            )}
 
-                {contact.email && (
-                  <p className="text-gray-600 text-sm">
-                    📧 {contact.email}
-                  </p>
-                )}
+            {/* Phone */}
+            <p className="text-gray-300 text-sm mt-1">
+              <span className="font-medium text-gray-400">Phone:</span>{" "}
+              {contact.phone}
+            </p>
 
-                <p className="text-gray-600 text-sm">
-                  📞 {contact.phone}
-                </p>
-
-                {contact.message && (
-                  <p className="mt-2 text-gray-700 italic">
-                    “{contact.message}”
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+            {/* Message */}
+            {contact.message && (
+              <p className="text-gray-300 text-sm mt-2">
+                <span className="font-medium text-gray-400">Message:</span>{" "}
+                {contact.message}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
