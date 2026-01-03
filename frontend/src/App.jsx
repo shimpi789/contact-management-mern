@@ -22,22 +22,23 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 px-4 py-10">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">
-        Contact Management App
-      </h1>
-  
-      {/* Contact Form Section */}
-      <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 mb-12">
-        <ContactForm onSuccess={fetchContacts} />
-      </div>
-  
-      {/* Submitted Contacts Section */}
-      <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
-        <ContactList contacts={contacts} />
-      </div>
+  <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 px-4 py-10">
+    <h1 className="text-4xl font-bold text-center text-white mb-10">
+      Contact Management App
+    </h1>
+
+    {/* Contact Form Section */}
+    <div className="max-w-md mx-auto bg-gray-900 text-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-700">
+      <ContactForm onSuccess={fetchContacts} />
     </div>
-  );
+
+    {/* Submitted Contacts Section */}
+    <div className="max-w-3xl mx-auto bg-gray-900 text-white rounded-2xl shadow-lg p-8 border border-gray-700">
+      <ContactList contacts={contacts} />
+    </div>
+  </div>
+);
+
   
   
 }
