@@ -51,7 +51,7 @@ function ContactForm({ onSuccess }) {
 
     try {
       await axios.post(
-        "https://contact-management-backend.onrender.com/api/contacts",
+        "https://contact-management-mern-f75y.onrender.com",
         formData
       );
 
