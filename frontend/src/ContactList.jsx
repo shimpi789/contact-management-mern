@@ -1,3 +1,5 @@
+import React from "react";
+
 function ContactList({ contacts = [] }) {
   if (!Array.isArray(contacts) || contacts.length === 0) {
     return (
